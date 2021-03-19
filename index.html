@@ -1,0 +1,309 @@
+<!doctype HTML>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>企画局</title>
+        <meta name="description" content="企画局">
+        <link rel="icon" type="png" href="logo.png">
+        <link rel="stylesheet" href="kikaku.css">
+    </head>
+
+    <body>
+        <header>
+            <!--▽▽ヘッダーロゴ▽▽-->
+                  <div class="logo1">
+                      <a href="#" id="headerlogo"><img src="headericon.png" class="hedlogo">
+                      </a>
+                  </div>
+            <!--△△ヘッダーロゴ△△-->
+            
+            
+            <!--▽▽ハンバーガーメニュー▽▽-->
+                  <div id="hamburger">
+                      <div class="icon">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </div>
+                  </div>
+            <!--△△ハンバーガーメニュー△△-->
+            
+             
+            <!--▽▽ハンバーガーメニューのリスト▽▽-->
+                  <nav class="sm navi">
+                    <ul class="lists">
+                      <li class="lili"><a  class="listwords" href="#">代表挨拶</a></li>
+                      <li class="lili"><a  class="listwords" href="#">早稲田祭について</a></li>
+                      <li class="lili"><a  class="listwords" href="#">新歓イベント</a></li>
+                      <li class="lili"><a  class="listwords" href="#">活動について</a></li>
+                      <li class="lili"><a  class="listwords" href="#">連載記事</a></li>
+                      <li class="lili"><a  class="listwords" href="#">年間スケジュール</a></li>
+                      <li class="lili"><a  class="listwords" href="#">フォトギャラリー</a></li>
+                      <li class="lili"><a  class="listwords" href="#">入会方法</a></li>
+                      <li class="lili"><a  class="listwords" href="#">お問い合わせ</a></li>
+                   </ul>
+                 </nav>
+            <!--△△ハンバーガーメニューのリスト△△-->
+            
+        
+            <!--▽▽ヘッダーリスト▽▽-->
+                  <nav class="pc navi">  <!--pcクラスを追記-->
+                    <ul class="lists">
+                      <li class="lili"><a  class="listwords" href="#">代表挨拶</a></li>
+                      <li class="lili"><a  class="listwords" href="#">新歓イベント</a></li>
+                      <li class="lili"><a  class="listwords" href="#">連載記事</a></li>
+                      <li class="lili"><a  class="listwords" href="#">入会方法</a></li>
+                      <li class="lili"><a  class="listwords" href="#">お問い合わせ</a></li>
+                    </ul>
+                  </nav>
+            <!--△△ヘッダーリスト△△-->
+            
+                </header>
+            
+            
+            <!--▽▽jQuery▽▽-->
+                <script src="jquery-3.6.0.min.js"></script>
+                  <script>
+                    $('#hamburger').on('click', function(){
+                    $('.icon').toggleClass('close');
+                    $('.sm').slideToggle();
+                    });
+              
+                  </script>
+            <!--△△jQuery△△-->
+ 
+
+
+        <style>
+            header {
+    height: 60px;
+    width: 100%;
+    padding: 0px 0px;
+    background-color:#78c1cd;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+  }
+  
+  
+  .lili:hover{
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+  
+  }
+  
+  .logo1 {
+    font-size: 25px;}
+    
+    .hedlogo{
+  height:55px;
+  width:55px;
+  margin-left:6px;
+    }
+    
+  
+  .hedlogo:hover  {
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+   
+  }
+   .navi{
+    margin: 0 0 0 auto;
+  }
+  
+  .lists {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listwords {
+    color: #eaf4fc;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+  }
+  
+  .sm {
+    display: none;
+  }
+  .toppagelogo{
+    height:500px;
+    width:500px;
+    padding:400px;
+  margin:0 auto;
+  }
+  /*---------------------------------------------------------------*/
+  @media (max-width: 900px) {
+  
+    .pc {
+      display: none;
+    }
+  
+    #hamburger {
+      background-color: transparent;
+      position:relative;
+      float:right
+      cursor:pointer;
+      margin: 0 0 0 auto;
+      height: 60px;
+      width: 60px;
+    }
+  
+    .icon span {
+      position: absolute;
+      left: 15px;
+      width: 30px;
+      height: 4px;
+      background-color:#eaf4fc;
+      border-radius: 8px;
+      transition: ease 0.75s;
+    }
+  
+    .icon span:nth-of-type(1) {
+      top: 16px;
+    }
+    .icon span:nth-of-type(2) {
+      top: 28px;
+    }
+    .icon span:nth-of-type(3) {
+      bottom: 16px;
+    }
+  
+    .close span:nth-of-type(1) {
+      transform: rotate(45deg);
+      top: 28px;
+    }
+  
+    .close span:nth-of-type(2) {
+      opacity: 0;
+    }
+  
+    .close span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 28px;
+    }
+  
+    .sm {
+        top: 60px;
+        left: 0px;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        background-color: #78c1cd;
+        
+    
+    }
+  
+   .lists {
+      flex-direction: column;
+    }
+  
+    .listwords {
+      text-align: center; 
+      border-top: solid 0.5px #eaf4fc;
+    }
+  
+  
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+        </style>
+        <div class="titlephoto">
+        <img src="企画局.png" alt="企画局" width="100%" height="auto">
+        </div>
+
+        <div class="wrapper">
+          <h2>企画局とは</h2>
+        <p class="setsumei">
+          企画局は「祭の節目を彩る企画」の演出を考え、リハーサルや警備を通じて運営する局です！ 
+          私たちが運営するのはCountdown Event／前夜祭／Opening Festival／ワセダパレード／中間決起／Ending Festivalの全6企画で、どの企画も知名度があり毎年高い集客力を誇ります。
+          しかし、私たちはそれだけで満足していません。一緒に、企画をより洗練させて魅力的なものにしましょう！ 
+          「自分たちの創りたい企画を形にできる」という点はもちろん、「企画の演出を考え、運営するという活動内容が開催形態によって大きく変わらない」という点も大きな魅力です！
+          また、企画局員は明るく元気なメンバーばかり！
+           局レクはもちろん運営スタッフ全体で行うイベントへの参加率も高いので、運スタライフが充実すること間違いなしです！ 
+           遊ぶことが大好きな企画局員ですが、「運営スタッフとして節度ある行動をしながら、楽しむときは全力で楽しむ」ことを大切にしています。
+           このメリハリのある姿勢は、これから入ってくる新規スタッフにもぜひ意識してもらいたいです！
+
+
+        </p>
+        
+        <h3>○プレイベントチーム
+        </h3>
+        <p>
+            <!-- チーム紹介の文字情報をここに入れる -->
+            早稲田祭の直前週に実施する「Countdown Event」と早稲田祭2日目の朝に実施する「中間決起」の企画立案・運営を担当しています。2020年度はオンライン開催に伴って、「2日目開幕企画」の企画立案・運営を行いました。Countdown Eventでは当日へのカウントダウンと共に祭の訪れを感じられるような企画を行い、早稲田祭への期待感を高めます。中間決起では眠気も疲労も吹き飛ぶような企画で早稲田祭2日目の朝を盛り上げています。あなたの思い描くアイデアがあなたの力で形になる瞬間は、感動と達成感で鳥肌間違いなしです！ プレイベントチームで、あなたにしか創れない企画を生みだしてみませんか？
+        </p>
+
+
+
+        <h3>◯前夜祭チーム
+        </h3>
+        <p>
+             <!-- チーム紹介の文字情報をここに入れる -->
+             早稲田祭の前日の夜に行われる「前夜祭」の企画立案・運営を担当しています。2020年度はオンライン開催に伴って、Opening Festivalの企画立案・運営を行いました。演出を考える段階から、出演団体・出演者との打ち合わせ、当日の企画運営までの全てをチーム全員で担います。チーム員みんなで1つの企画を創りあげるため、活動のやりがいは無限大です！
+
+早稲田祭前夜のわくわくを共有し、増幅させる最高な企画を、私たちと一緒に創ってみませんか？
+
+        </p>
+
+
+        <h3>○OFEFチーム
+        </h3>
+        <p>
+            <!-- チーム紹介の文字情報をここに入れる -->
+            早稲田祭の開幕・閉幕を告げるOpenig FestivalとEnding Festivalの企画立案・運営を担当しています。2020年度はオンライン開催に伴って、Ending Festivalのみの企画立案・運営を行いました。数ある早稲田祭の企画の中でも非常に知名度が高く、早稲田を代表するサークルが多く出演するため、4000人もの方が来場されることもあります。これほど大規模な企画を開催するには当然困難も伴いますが、無事に成功した時の感動はOFEFチームでしか体験できません！ OFEFチームで、共に祭の華を創りあげましょう！
+        </p>
+
+        <h3>○パレードチーム
+        </h3>
+        <p>
+            <!-- チーム紹介の文字情報をここに入れる -->
+            1日目の夕方から夜にかけて行われる「ワセダパレード」の企画立案・運営を担当しています。また、2020年度はオンライン開催に伴って「1日目閉幕企画」の企画立案・運営を行いました。「ワセダパレード」は戸山キャンパス・大学周辺地域・早稲田キャンパスにまたがる企画です。私たちの企画の最大の魅力は「ステージだけでなく構外で歩きながら演出をする」という大規模かつ、他の学園祭にはない独自性の高い企画ができるということです。そんな企画の運営・演出をする機会はそうそうないです！ 早稲田の街のタイムラインをパレード一色に染めあげ、青春のストーリーを更新しませんか？
+        </p>
+
+        </div>
+</body>
+
+<footer>
+
+    <div class="wrapper2">
+        <p class="title">WASEDASAI OPERATION STAFF</br>SHINKAN 2021</p>
+        <div class="innerbox">
+              
+            <a href="https://twitter.com/wasedasai_new?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" > 
+                <img src="twitter.png" alt="twitter" width="80" height="80"　border="0"> 
+            </a>
+
+            <a href="https://www.instagram.com/wasedasai_new/" target="_blank" > 
+                <img src="instagram.png" alt="instagram" width="80" height="80"　border="0"> 
+            </a>
+
+            <a href="https://qr-official.line.me/sid/M/011uqnra.png" target="_blank" > 
+                <img src="line.png" alt="line" width="80" height="80"　border="0"> 
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCFh9blapIkxPf4Al3L87QHQ" target="_blank" > 
+                <img src="youtube.png" alt="youtube" width="80" height="80"　border="0"> 
+            </a>
+        </div>
+    </div>
+        <div class="footerlogo">
+            <a href="toppage.html" target="_blank" > 
+                <img src="footerlogo.png" alt="footerlogo" width="40%" height="40%"　border="0"> 
+            </a>
+        </div>
+
+
+        </div>
+        <p ><small>Copyright @ WASEDASAI2021 Staff All Rights Reserved. </small></p>
+    </div>
+</footer>
+</html>
